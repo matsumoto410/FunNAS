@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <style>
+#wrap{
+position: relative;
+height: 250px;
+width: 400px;
+margin: 0 auto;
+}
+#wrap div{
+position: absolute;
+width: 16px;
+height: 16px;
+background-color: white;
+cursor: pointer;
+}
+
+.blackDiv{
+border: 1px solid #000;
+}
+.redDiv{
+	border: 1px solid red;
+}
+
+</style> 
+  <link rel="stylesheet" href="./css/bootstrap.min.css" /> 
+  <link rel="stylesheet" href="./css/spectrum.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <script src="./js/jquery.min.js"></script> 
+  <script src="./js/bootstrap.min.js"></script> 
+  <script src="./js/bootstrap-datepicker.js"></script> 
+  <script src="./js/index_en.js"></script> 
+  <script src="./js/nebPay.js"></script> 
+  <script src="./js/spectrum.js"></script>
+
+ </head> 
+ <body> 
+  <div class="container"> 
+
+     <div class="jumbotron"> 
+      <h1> Fun NAS Game </h1> 
+      <p> This game is developed on NEBULAS chain. Nebulas is a next generation public blockchain, aiming for a continuously improving ecosystem.
+Based on its blockchain valuation mechanism, Nebulas proposes future-oriented incentive and consensus systems, and the ability to self-evolve without forking. </p> 
+     </div> 
+     <dl> 
+      <dt>
+        Game Rules： 
+      </dt> 
+      <dd>
+        1. This is one collection game on the cells which make up the word "NAS". 
+      </dd> 
+      <dd>
+        2. For all the initial cells, they are free and have no owner, you can choose any cells you like.
+      </dd> 
+      <dd>
+        3. For the cells you own, you can set the selling price, without paying any fees.
+      </dd> 
+      <dd>
+        4. For the cells you own, you can set the background color you like, without paying any fees.
+      </dd> 
+      <dd>
+        5. There will be one 5% fees when you buy the cells from other owners.
+      </dd> 
+     </dl> 
+     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation"> 
+      <div class="navbar-header"> 
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> 
+       <a class="navbar-brand" href="https://nebulas.io/" target="_blank">NEBULAS</a> 
+      </div> 
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+       <ul class="nav navbar-nav"> 
+        <li class="active"> <a href="#">HOME</a> </li> 
+        <li> <a href="#about">ABOUT</a> </li> 
+       </ul> 
+					<ul class="nav navbar-nav navbar-right" style="padding-right:40px">
+						<li>
+							 <a href="./index.html">中文</a>
+						</li>
+			
+					</ul>
+      </div> 
+	  
+	 
+
+		
+     </nav> 
+     <div class="panel panel-default"> 
+      <div class="panel-body"> 
+       <div id="wrap"></div> 
+       <div class="row clearfix" > 
+        <div class="col-md-6 column"> 
+         <div class="form-group"> 
+          <label for="cellOwner">Owner Address</label>
+          <input type="text" class="form-control" id="cellOwner" readonly="true" /> 
+         </div> 
+         <div> 
+          <div class="form-group"> 
+           <label for="cellStatus">Status</label>
+		   <select class="form-control" id="cellStatus" disabled="true" >  <option value="0">Not In Sale</option> <option value="1">In Sale</option></select> 
+           
+          </div> 
+          <div> 
+ <div class="form-group"> 
+            <label for="cellPrice">Price（NAS）</label>
+            <input type="text" class="form-control" id="cellPrice" readonly="true" /> 
+           </div> 
+
+            
+            <button type="submit" class="btn btn-default" id="savebutton" disabled="true">Save</button>
+			<button type="submit" class="btn btn-default" id="buybutton" disabled="true">Buy</button>
+           </div> 
+
+         </div> 
+        </div> 
+        <div class="col-md-6 column"> 
+		          
+         <div class="form-group"> 
+             <label for="cellColor">Custom Background Color</label>
+			 <br>
+             <input type="text" class="form-control" id="cellColor" style="width:80px"/> 
+            </div> 
+            <div class="form-group"> 
+             <label for="cellRemark">Say Some Words for Your Cell</label>
+             <textarea class="form-control" id="cellRemark" rows="5" readonly="true" ></textarea>
+            </div> 
+            
+           </div> 
+          </div>
+
+        </div> 
+       </div> 
+<br>
+<div>
+       <h3 id="about"> About Us </h3> 
+       <dl> 
+        <dt>
+          Thanks for your interest in this game. 
+        </dt> 
+        <dd>
+          This DAPP is developed and run on Nebulas chain. The contract is public accessed.
+        </dd> 
+		<br>
+        <dt>
+          Some Attentions:
+        </dt> 
+        <dd>
+          This DAPP can only be run in Chrome, and NEBULAS extension is needed.
+
+        </dd> 
+        <dd>
+          Please refer below for how to install the NEBULAS extension.
+        </dd> 
+		<dd>
+		https://github.com/ChengOrangeJu/WebExtensionWallet
+		</dd>
+        
+       </dl> 
+
+</div>
+<nav class="navbar navbar-default navbar-static-bottom" role="navigation">
+<div class="col-md-12" style="text-align: center;background:white">
+                    <p>Copyright © 2018.
+					<br>
+                        <a href="https://incentive.nebulas.io/signup.html?invite=iRGAj" target="_blank">Publich your DAPP to get 100NAS</a>
+                    </p>
+                    
+                </div>
+				
+			</nav>     
+
+ 
+   </div>
+  </div>
+  <script>
+$("#cellColor").spectrum({
+    color: "#FFF", disabled: true
+});
+
+  </script>
+ </body>
+</html>
