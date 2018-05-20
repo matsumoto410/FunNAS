@@ -49,6 +49,10 @@ $(function() {
 			var cellOwner = $("#cellOwner").val();
 			var cellStatus = $("#cellStatus").val();
 			var cellPrice = $("#cellPrice").val();
+			if(isNaN(cellPrice)){
+				alert("The price format is not correct.");
+				return;
+			}
 			var cellColor = $("#cellColor").spectrum("get").toHexString();
 			var cellRemark = $("#cellRemark").val().replace(/\n/g,"<br>");
 			
