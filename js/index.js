@@ -76,10 +76,11 @@ $(function() {
 function displayCell(obj){
 	objId = obj.id;
 	$(obj).removeClass("blackDiv");
-	$(".redDiv").css("border-width","1px");
-	$(".redDiv").addClass("blackDiv").removeClass("redDiv");
-	$(obj).addClass("redDiv");
+	$(".roundDiv").css("border-width","1px");
+	$(".roundDiv").addClass("blackDiv").removeClass("roundDiv");
+	$(obj).addClass("roundDiv");
 	$(obj).css("border-width","2px");
+	$(".redDiv").css("border-width","2px");
 	
 	var isRegistered = false;
 	var obj;
@@ -162,6 +163,9 @@ function loadCells(){
 				for(var i =0;i<myArr.length;i++){
 					var divId = myArr[i].cellKey;
 					$("#"+divId).css("background-color", myArr[i].cellColor);
+if(myArr[i].isOwner){
+$("#"+divId).addClass("redDiv");
+}
 				}
  
             }
@@ -185,7 +189,7 @@ for(var i = 1; i <= rows; i++){
 for(var j = 1; j <= cols; j++){
 var pos = (( i-1 )*cols+( j ))*4 -1;
 if(data.data[pos] > 0){
-res += '<div class="blackDiv" style="left:' + (j*17-20) + 'px;top:' + (i*17-50) + 'px" id="' + i + '_' + j + '" onclick="displayCell(this);"></div>';
+res += '<div class="blackDiv" style="left:' + (j*21-80) + 'px;top:' + (i*21-80) + 'px" id="' + i + '_' + j + '" onclick="displayCell(this);"></div>';
 }
 }
 }
