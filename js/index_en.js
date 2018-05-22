@@ -107,6 +107,8 @@ function displayCell(obj){
 			
 			if(obj.cellStatus == 1){
 				$("#buybutton").attr("disabled", false);
+			}else{
+				$("#buybutton").attr("disabled", true);
 			}
 		}else{
 			$("#cellStatus").attr('disabled', false);
